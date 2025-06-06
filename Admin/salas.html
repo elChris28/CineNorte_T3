@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel Admin - Cine del Norte</title>
+  <link rel="stylesheet" href="Style/admin.css" />
+  <link rel="stylesheet" href="Style/salas.css" />
+</head>
+<body>
+  <div class="admin-container">
+    <aside class="sidebar">
+      <h2>Cine del Norte</h2>
+      <ul>
+        <li><a href="admin.html">Dashboard</a></li>
+        <li><a href="peliculas.html">Películas</a></li>
+        <li><a href="salas.html">Salas</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="Promociones.html">Promociones</a></li>
+        <li><a href="empleados.html">Empleados</a></li>
+        <li><a href="reportes.html">Reportes</a></li>
+        <li><a href="/index.html">Cerrar Sesión</a></li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <h1>Agregar nueva sala</h1>
+      <form id="formSala" class="formulario">
+        <div class="fila">
+          <input type="text" id="nombreSala" placeholder="Nombre de la sala" required>
+          <input type="number" id="capacidad" placeholder="Capacidad" required>
+        </div>
+        <div class="fila">
+          <select id="tipoSala" required>
+            <option value="">Tipo de Sala</option>
+            <option value="2D">2D</option>
+            <option value="3D">3D</option>
+            <option value="VIP">VIP</option>
+            <option value="IMAX">IMAX</option>
+          </select>
+          <input type="text" id="ubicacion" placeholder="Ubicación / Piso">
+        </div>
+        <div class="fila">
+          <select id="estado" required>
+            <option value="">Estado</option>
+            <option value="activa">Activa</option>
+            <option value="inactiva">Inactiva</option>
+          </select>
+          <select id="peliculaSala">
+            <option value="">-- Sin película asignada --</option>
+          </select>
+        </div>
+        <div class="campo-horarios">
+          <label>Horarios disponibles</label>
+          <div class="fila">
+            <input type="time" id="inputHorario">
+            <button type="button" class="btn-agregar" onclick="agregarHorario()">Agregar Horario</button>
+          </div>
+          <div id="listaHorarios" class="horarios-lista"></div>
+        </div>
+        <button type="submit" class="btn-guardar">Guardar Sala</button>
+      </form>
+
+      <h2>Salas agregadas</h2>
+      <div id="listaSalas" class="salas-grid"></div>
+    </main>
+  </div>
+
+</body>
+</html>
+

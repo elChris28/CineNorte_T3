@@ -1,0 +1,130 @@
+    /* Estilo base: navbar encima del hero */
+    .custom-navbar {
+    background-color: black;
+    transition: background-color 0.3s, padding 0.3s, text-align 0.3s;
+    padding: 1.2em 2em;
+    text-align: left;
+    z-index: 999;
+    font-size: 20px;
+    }
+
+    /* Al hacer scroll, cambia el fondo y centra el contenido */
+    .custom-navbar.scrolled {
+    background-color: #0e0d0d;
+    padding: 0.7em 2em;
+    text-align: center;
+    }
+
+    /* Cuando haces scroll: aumenta separación proporcional */
+    .custom-navbar.scrolled .nav-link {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    }
+
+    /* Espaciado reducido entre ítems en estado base (navbar flotante) */
+    .custom-navbar .nav-link {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    transition: margin 0.3s ease;
+    }
+
+    /* HERO completo adaptado a Bootstrap */
+    .hero {
+    min-height: 1vh;
+    background: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    }
+
+    .hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+    font-size: 1.3rem;
+    max-width: 600px;
+    }
+
+    /* Footer */
+    footer {
+    text-align: center;
+    padding: 2rem;
+    background: #111;
+    color: #888;
+    }
+
+    /* Estilo base para los asientos */
+    .asiento {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 2px solid #0d6efd;
+    cursor: pointer;   
+    transition: background-color 0.2s;
+    color: rgb(255, 255, 255);
+
+    }
+
+    .asiento.disponible {
+    background-color: transparent;
+    }
+
+    .asiento.ocupada {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    cursor: not-allowed;
+    }
+
+    .asiento.seleccionada {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    }
+
+    .asiento.silla {
+    background-color: transparent;
+    border-color: #6c757d;
+    position: relative;
+    }
+
+    .asiento.silla::after {
+    content: "♿";
+    font-size: 12px;
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    color: #6c757d;
+    }
+
+    .numero-asiento {
+    pointer-events: none;
+    }
+
+
+    main h2, main h4, main p {
+    color: #28313a; /* texto oscuro */
+    }
+
+    .pov-img {
+    width: 70px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid #555;
+    transition: transform 0.2s;
+    }
+
+    .pov-img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    }
+
+    .clickable {
+    cursor: pointer;
+    }

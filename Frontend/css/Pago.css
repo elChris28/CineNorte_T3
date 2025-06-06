@@ -1,0 +1,36 @@
+    /* Estilo base: navbar encima del hero */
+    .custom-navbar {
+    background-color: black;
+    transition: background-color 0.3s, padding 0.3s, text-align 0.3s;
+    padding: 1.2em 2em;
+    text-align: left;
+    z-index: 999;
+    font-size: 20px;
+    }
+
+    /* Al hacer scroll, cambia el fondo y centra el contenido */
+    .custom-navbar.scrolled {
+    background-color: #0e0d0d;
+    padding: 0.7em 2em;
+    text-align: center;
+    }
+
+    /* Cuando haces scroll: aumenta separación proporcional */
+    .custom-navbar.scrolled .nav-link {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    }
+
+    /* Espaciado reducido entre ítems en estado base (navbar flotante) */
+    .custom-navbar .nav-link {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    transition: margin 0.3s ease;
+    }
+
+        .toast-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1055;
+    }

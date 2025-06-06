@@ -1,0 +1,106 @@
+/* HERO completo adaptado a Bootstrap */
+.hero {
+  min-height: 95vh;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
+              url('/img/hero.png') no-repeat center center / cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  max-width: 600px;
+}
+
+.hero .btn {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* Cartelera */
+.cartelera {
+  padding: 4rem 2rem;
+}
+
+.cartelera h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #ff4757;
+}
+
+/* Tarjetas de películas */
+.card-img-top {
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #111;
+  color: #888;
+}
+
+.pelicula {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.pelicula:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+
+/* Estilo base: navbar encima del hero */
+.custom-navbar {
+  background-color: transparent;
+  transition: background-color 0.3s, padding 0.3s, text-align 0.3s;
+  padding: 1.2em 2em;
+  text-align: left;
+  z-index: 999;
+  font-size: 20px;
+}
+
+/* Al hacer scroll, cambia el fondo y centra el contenido */
+.custom-navbar.scrolled {
+  background-color: #0e0d0d;
+  padding: 0.7em 2em;
+  text-align: center;
+}
+
+/* Cuando haces scroll: aumenta separación proporcional */
+.custom-navbar.scrolled .nav-link {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+/* Espaciado reducido entre ítems en estado base (navbar flotante) */
+.custom-navbar .nav-link {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  transition: margin 0.3s ease;
+}
+
+.botones-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 12rem;
+  border-radius: 20px;
+  transition: opacity 0.3s ease;
+}
+
+

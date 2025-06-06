@@ -1,0 +1,62 @@
+    /* Estilo base: navbar encima del hero */
+    .custom-navbar {
+    background-color: transparent;
+    transition: background-color 0.3s, padding 0.3s, text-align 0.3s;
+    padding: 1.2em 2em;
+    text-align: left;
+    z-index: 999;
+    font-size: 20px;
+    }
+
+    /* Al hacer scroll, cambia el fondo y centra el contenido */
+    .custom-navbar.scrolled {
+    background-color: #0e0d0d;
+    padding: 0.7em 2em;
+    text-align: center;
+    }
+
+    /* Cuando haces scroll: aumenta separación proporcional */
+    .custom-navbar.scrolled .nav-link {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    }
+
+    /* Espaciado reducido entre ítems en estado base (navbar flotante) */
+    .custom-navbar .nav-link {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    transition: margin 0.3s ease;
+    }
+
+    /* HERO completo adaptado a Bootstrap */
+    .hero {
+    min-height: 65vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0,0,0,0.9)),
+                url('/img/banner\ peliculas.png') no-repeat center center / cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    }
+
+    .hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+    font-size: 1.3rem;
+    max-width: 600px;
+    }
+
+
+    
+    .botones-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 12rem;
+    border-radius: 20px;
+    transition: opacity 0.3s ease;
+    }

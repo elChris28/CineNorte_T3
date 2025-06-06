@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cine del Norte</title>
+  <link rel="stylesheet" href="/Frontend/css/ReservarAsiento.css" />
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Navbar -->
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand fw-bold" href="Inicio.html">🎬 Cine del Norte</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="cartelera.html">Cartelera</a></li>
+          <li class="nav-item"><a class="nav-link" href="Nosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="promociones.html">Promociones</a></li>
+          <li class="nav-item"><a class="nav-link" href="horarios.html">Horarios</a></li>
+          <li class="nav-item"><a class="nav-link" href="Dulceria.html">Dulceria</a></li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          
+          <li class="nav-item"><a class="nav-link" href="#">Iniciar Sesión</a></li>
+          <li class="nav-item"><a class="nav-link" href="/index.html">Cerrar Sesión</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+
+  </section>
+
+  <main class="container">
+    <div class="row g-4">
+    <!-- Panel Izquierdo + Mi Pedido -->
+    <div class="col-md-4 bg-light rounded p-4 text-dark shadow-sm">
+      <div class="text-center mb-4">
+        <img id="poster" src="" alt="Poster" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+      </div>
+      <h4 id="titulo" class="fw-bold"></h4>
+      <p id="idioma"></p>
+      <p><i class="bi bi-calendar-event"></i> <span id="fecha"></span></p>
+      <p><i class="bi bi-clock"></i> <span id="hora"></span></p>
+      <p><i class="bi bi-camera-reels"></i> <span id="sala"></span></p>
+      <p><strong>Butacas seleccionadas:</strong> <span id="butacasSeleccionadas" class="text-success">Ninguna</span></p>
+
+
+
+      <hr>
+
+      <!-- 🧾 Mi Pedido -->
+      <div id="cardPedido" class="card bg-white p-3 shadow-sm mt-3" style="display: none;">
+        <h6 class="fw-bold text-danger mb-3">Mi Pedido</h6>
+        <ul id="resumenPedido" class="list-group small mb-2"></ul>
+        <p class="fw-bold text-end">Total: <span id="totalPedido">S/. 0.00</span></p>
+        <button class="btn btn-success w-100" onclick="irAPago()">Ir a Pago</button>
+      </div>
+    </div>
+
+      <!-- Panel Derecho -->
+    <div class="col-md-8 bg-white rounded p-4 shadow-sm">
+      <h5 class="text-center fw-bold mb-4 text-muted">Pantalla</h5>
+
+      <!-- Grilla vertical con POVs arriba, asientos al centro, POVs abajo -->
+      <div class="d-flex flex-column align-items-center gap-2">
+
+        <!-- POVs Superiores (más cerca ahora) -->
+        <div class="d-flex justify-content-center" style="gap: 320px;">
+          <img id="povTopLeft" class="pov-img clickable" style="display:none;" />
+          <img id="povTopRight" class="pov-img clickable" style="display:none;" />
+        </div>
+
+        <!-- Asientos + laterales -->
+        <div class="d-flex justify-content-center align-items-center mb-3">
+          <img id="povBottomLeft" class="pov-img clickable me-2" style="display:none;" />
+          <div id="interfazAsientos" class="d-flex justify-content-center"></div>
+          <img id="povBottomRight" class="pov-img clickable ms-2" style="display:none;" />
+        </div>
+
+        <!-- Leyenda -->
+        <div class="d-flex justify-content-around text-center mb-3 small">
+          <div><span class="asiento disponible me-1"></span> Disponible</div>
+          <div><span class="asiento ocupada me-1"></span> Ocupada</div>
+          <div><span class="asiento seleccionada me-1"></span> Seleccionada</div>
+          <div><span class="asiento silla me-1"></span> Silla de ruedas</div>
+        </div>
+
+        <p class="text-muted text-center small">
+          Todas nuestras salas cuentan con espacios señalizados para sillas de ruedas.
+        </p>
+
+        <div class="text-center mt-4">
+          <button class="btn btn-primary btn-lg px-5" id="confirmarReserva" disabled>Continuar</button>
+        </div>
+      </div>
+
+      <!-- Modal para ampliar POV -->
+      <div class="modal fade" id="modalPOV" tabindex="-1" aria-labelledby="modalPOVLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content bg-dark text-white">
+            <div class="modal-body p-0">
+              <img id="modalPOVImage" class="w-100" style="max-height: 80vh; object-fit: contain;" />
+            </div>
+            <div class="modal-footer bg-dark border-0 justify-content-center">
+              <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+    <footer class="bg-dark text-center text-white py-3">
+        <p>&copy; 2025 Todos los derechos reservados a Cine del Norte</p>
+    </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scriptReservar.js"></script>
+</body>
+</html>

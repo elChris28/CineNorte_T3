@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel Admin - Cine del Norte</title>
+  <link rel="stylesheet" href="Style/peliculas.css" />
+</head>
+<body>
+  <div class="admin-container">
+    <aside class="sidebar">
+      <h2>Cine del Norte</h2>
+      <ul>
+        <li><a href="admin.html">Dashboard</a></li>
+        <li><a href="peliculas.html">Películas</a></li>
+        <li><a href="salas.html">Salas</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="Promociones.html">Promociones</a></li>
+        <li><a href="empleados.html">Empleados</a></li>
+        <li><a href="reportes.html">Reportes</a></li>
+        <li><a href="/index.html">Cerrar Sesión</a></li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <h1>Agregar nueva película</h1>
+      <form id="formPelicula" class="formulario">
+        <div class="fila">
+          <input type="text" id="titulo" class="campo-input" placeholder="Título" required>
+          <input type="text" id="genero" class="campo-input" placeholder="Género" required>
+        </div>
+        <div class="fila">
+          <input type="text" id="duracion" class="campo-input" placeholder="Duración" required>
+          <input type="text" id="clasificacion" class="campo-input" placeholder="Clasificación" required>
+          <select id="idioma" class="campo-select" required>
+            <option value="">Selecciona idioma</option>
+            <option value="Doblada">Doblada</option>
+            <option value="Subtitulada">Subtitulada</option>
+          </select>
+        </div>
+        <div class="campo-textarea">
+          <textarea id="sinopsis" class="campo-textarea" placeholder="Sinopsis" rows="3" required></textarea>
+        </div>
+        <div class="campo-url">
+          <label for="trailer">URL del tráiler:</label>
+          <input type="url" id="trailer" name="trailer" class="campo-input" placeholder="https://youtu.be/..." />
+        </div>
+
+        <div class="disponibilidad">
+          <label>Disponibilidad</label><br>
+          <label><input type="checkbox" id="2d" value="2D" /> 2D</label>
+          <label><input type="checkbox" id="3d" value="3D" /> 3D</label>
+          <label><input type="checkbox" id="vip" value="VIP" /> VIP</label>
+          <label><input type="checkbox" id="imax" value="IMAX" /> IMAX</label>
+        </div>
+
+        <div class="campo-file">
+          <input type="file" id="poster" class="campo-input" accept="image/*" required>
+          <img id="previewPoster" class="preview-img" style="display: none;" />
+        </div>
+
+        <button type="submit" class="btn-guardar">Agregar</button>
+      </form>
+
+      <h2>Películas agregadas</h2>
+      <div id="listaPeliculas" class="peliculas-grid"></div>
+    </main>
+  </div>
+
+
+</body>
+</html>

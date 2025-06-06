@@ -1,0 +1,88 @@
+    /* Estilo base: navbar encima del hero */
+    .custom-navbar {
+    background-color: black;
+    transition: background-color 0.3s, padding 0.3s, text-align 0.3s;
+    padding: 2em;
+    text-align: left;
+    z-index: 999;
+    font-size: 20px;
+    }
+
+    /* Al hacer scroll, cambia el fondo y centra el contenido */
+    .custom-navbar.scrolled {
+    background-color: #0e0d0d;
+    padding: 0.7em 2em;
+    text-align: center;
+    }
+
+    /* Cuando haces scroll: aumenta separación proporcional */
+    .custom-navbar.scrolled .nav-link {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    }
+
+    /* Espaciado reducido entre ítems en estado base (navbar flotante) */
+    .custom-navbar .nav-link {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    transition: margin 0.3s ease;
+    }
+
+
+    .categoria-bar {
+      background-color: #222121;
+      margin-top: 60px;
+      padding: 2rem;
+      text-align: center;
+
+
+    }
+    .categoria-bar .btn {
+      margin: 0.2rem;
+    }
+    .cantidad {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+    .cantidad button {
+      width: 32px;
+      height: 32px;
+      font-weight: bold;
+    }
+.producto-card {
+  background-color: #1c1c1c;
+  color: #fff;
+  border: 1px solid #444;
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+}
+
+.producto-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.producto-card .btn {
+  background-color: transparent;
+  color: #000000;
+  border-color: #000000;
+}
+
+.producto-card .btn:hover {
+  background-color: #ff4757;
+  border-color: #ff4757;
+  color: #000000;
+}
+
+.cantidad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+

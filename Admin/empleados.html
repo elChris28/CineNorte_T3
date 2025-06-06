@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panel Admin - Cine del Norte</title>
+  <link rel="stylesheet" href="Style/StyleEmpleados.css" />
+</head>
+<body>
+  <div class="admin-container">
+    <aside class="sidebar">
+      <h2>Cine del Norte</h2>
+      <ul>
+        <li><a href="admin.html">Dashboard</a></li>
+        <li><a href="peliculas.html">Películas</a></li>
+        <li><a href="salas.html">Salas</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="Promociones.html">Promociones</a></li>
+        <li><a href="empleados.html">Empleados</a></li>
+        <li><a href="reportes.html">Reportes</a></li>
+        <li><a href="/index.html">Cerrar Sesión</a></li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <h1>Agregar nuevo empleado</h1>
+
+      <form id="formEmpleado" class="form-empleado">
+        <div class="fila-flex">
+          <div class="flex-1">
+            <label><strong>Nombre completo:</strong></label><br />
+            <input type="text" placeholder="Nombre" class="campo-input" required />
+          </div>
+          <div class="flex-1">
+            <label><strong>&nbsp;</strong></label><br />
+            <input type="text" placeholder="Apellido" class="campo-input" required />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label><strong>DNI:</strong></label><br />
+          <input type="text" id="dni" class="campo-input" placeholder="DNI" required />
+        </div>
+        <div class="mb-3">
+          <label><strong>Correo Electrónico:</strong></label><br />
+          <input type="email" id="correoElectronico" class="campo-input" placeholder="Correo electrónico" required />
+        </div>
+        <div class="mb-3">
+          <label><strong>Contraseña:</strong></label><br />
+          <input type="password" id="contrasena" class="campo-input" placeholder="Contraseña" required />
+        </div>
+        <div class="mb-3">
+          <label><strong>Cargo:</strong></label><br />
+          <input type="text" id="cargo" class="campo-input" placeholder="Cargo" />
+        </div>
+        <div class="mb-3">
+          <label><strong>Turno:</strong></label><br />
+          <input type="text" id="turno" class="campo-input" placeholder="Turno" />
+        </div>
+        <div class="mb-3 flex-row-center gap-3">
+          <img
+            id="previewFoto"
+            src="https://via.placeholder.com/80?text=👤"
+            alt="Foto del personal"
+            class="foto-personal"
+          />
+          <div>
+            <label for="fotoPersonal" class="btn-primary btn">
+              📁 Foto del personal
+            </label>
+            <input type="file" id="fotoPersonal" accept="image/*" class="input-file" />
+          </div>
+        </div>
+
+        <button type="submit" class="btn-danger btn">Agregar</button>
+      </form>
+
+      <h4 class="mt-5">Personal Asignado:</h4>
+      <table class="tabla-personal">
+        <thead class="tabla-header">
+          <tr>
+            <th>Nombre</th>
+            <th>DNI</th>
+            <th>Correo</th>
+            <th>Cargo</th>
+            <th>Turno</th>
+            <th>Foto</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaPersonal"></tbody>
+      </table>
+    </main>
+  </div>
+</body>
+</html>
