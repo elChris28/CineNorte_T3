@@ -1,64 +1,100 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cine del Norte</title>
-  <link rel="stylesheet" href="/Frontend/css/cartelera.css" />
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <title>Cine del Norte - Cartelera</title>
+  <link rel="stylesheet" href="/Frontend/css/cartelera.css">
 </head>
 <body>
-
-    <!-- Navbar -->
-  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
-    <div class="container-fluid px-4">
-      <a class="navbar-brand fw-bold" href="Inicio.html">🎬 Cine del Norte</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item"><a class="nav-link" href="cartelera.html">Cartelera</a></li>
-          <li class="nav-item"><a class="nav-link" href="Nosotros.html">Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link" href="promociones.html">Promociones</a></li>
-          <li class="nav-item"><a class="nav-link" href="horarios.html">Horarios</a></li>
-          <li class="nav-item"><a class="nav-link" href="Dulceria.html">Dulceria</a></li>
-        </ul>
-        <ul class="navbar-nav ms-auto">
-          
-          <li class="nav-item"><a class="nav-link" href="#">Iniciar Sesión</a></li>
-          <li class="nav-item"><a class="nav-link" href="/index.html">Cerrar Sesión</a></li>
+  <!-- Navbar sin Bootstrap -->
+  <nav class="navbar-custom">
+    <div class="navbar-container">
+      <div class="navbar-left">
+        <a href="Inicio.html" class="navbar-logo">🎬 Cine del Norte</a>
+        <ul class="nav-left">
+          <li><a href="cartelera.html">Cartelera</a></li>
+          <li><a href="Nosotros.html">Nosotros</a></li>
+          <li><a href="promociones.html">Promociones</a></li>
+          <li><a href="horarios.html">Horarios</a></li>
+          <li><a href="Dulceria.html">Dulcería</a></li>
         </ul>
       </div>
+      <ul class="nav-right">
+        <li><a href="#">Iniciar Sesión</a></li>
+        <li><a href="/index.html">Cerrar Sesión</a></li>
+      </ul>
     </div>
   </nav>
 
   <!-- Hero -->
   <section class="hero">
-    <h1 class="fw-bold">La emoción del cine en tu ciudad</h1>
+    <h1>La emoción del cine en tu ciudad</h1>
     <p>Consulta funciones, estrenos y reserva tu entrada.</p>
-    <a href="#" class="btn btn-danger btn-lg">Ver Cartelera</a>
+    <a href="#cartelera" class="btn-primary">Ver Cartelera</a>
   </section>
 
   <!-- Cartelera -->
-  <main class="bg-dark text-white py-5 cartelera">
-    <div class="container">
-      <h2>Cartelera</h2>
-      <div class="row" id="listaPeliculas">
-        <!-- Películas dinámicas aquí -->
+  <section id="cartelera" class="contenedor-cartelera">
+    <h2>Cartelera</h2>
+    <div class="contenedor-peliculas">
+      <div class="tarjeta">
+        <img src="/img/pelicula.png" alt="Película 1">
+        <h3>Película 1</h3>
+        <a href="detalles.html" class="btn-detalles">Más detalles</a>
+      </div>
+      <div class="tarjeta">
+        <img src="/img/pelicula2.png" alt="Película 2">
+        <h3>Película 2</h3>
+        <a href="detalles.html" class="btn-detalles">Más detalles</a>
+      </div>
+      <div class="tarjeta">
+        <img src="/img/pelicula3.png" alt="Película 3">
+        <h3>Película 3</h3>
+        <a href="detalles.html" class="btn-detalles">Más detalles</a>
       </div>
     </div>
-  </main>
+  </section>
 
   <!-- Footer -->
-    <footer class="bg-dark text-center text-white py-3">
-        <p>&copy; 2025 Todos los derechos reservados a Cine del Norte</p>
-    </footer>
-
-  <!-- Bootstrap 5 JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="scriptCartelera.js"></script>
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <img src="logo-cine.png" alt="Cine del Norte" />
+        <p class="logo-text">CINE DEL NORTE</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-column">
+          <h3>PROGRAMACIÓN</h3>
+          <ul>
+            <li><a href="#">Cartelera</a></li>
+            <li><a href="#">Próximamente</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>NOSOTROS</h3>
+          <ul>
+            <li><a href="#">Conócenos</a></li>
+            <li><a href="#">Términos y condiciones</a></li>
+            <li><a href="#">Política de Protección de Datos Personales</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>OTROS SERVICIOS</h3>
+          <ul>
+            <li><a href="#">Publicidad</a></li>
+            <li><a href="#">Reportar incidencia</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Todos los derechos reservados a Cine del Norte</p>
+      <div class="redes-sociales">
+        <a href="#" class="icono facebook">📘 Facebook</a>
+        <a href="#" class="icono twitter">🐦 Twitter</a>
+        <a href="#" class="icono instagram">📸 Instagram</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
